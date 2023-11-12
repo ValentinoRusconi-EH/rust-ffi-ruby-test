@@ -1,5 +1,4 @@
 use image::imageops::FilterType;
-use std::ffi::CString;
 use std::ffi::CStr;
 use std::os::raw::c_char;
 
@@ -25,6 +24,7 @@ pub extern "C" fn resize_image(input: *const c_char, output: *const c_char, new_
 mod tests {
     use super::*;
     use image::{GenericImageView, ImageBuffer, Rgb};
+    use std::ffi::CString;
 
     #[test]
     fn test_resize_image() {
